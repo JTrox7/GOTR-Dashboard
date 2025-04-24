@@ -56,7 +56,7 @@ for var in pre_post_pairs:
 st.title("GOTR AI Interactive Dashboard")
 
 # Expander with variable definitions
-with st.expander("🧠 What do the variable names mean?"):
+with st.expander("What do the variable names mean?"):
     st.markdown("""
     - **PHYSACT** — I am good at most physical activities  
     - **CLASS** — I have classmates who like me the way I am  
