@@ -53,7 +53,7 @@ for var in pre_post_pairs:
     st.sidebar.markdown(f"- `{var}`")
 
 # App title
-st.title("GOTR AI Interactive Dashboard")
+st.title("GOTR Interactive Dashboard")
 
 # ✅ Input prompt FIRST
 user_input = st.text_input("Ask something like: 'Compare RESPECT and PHYSACT' or 'Show the change in MAKEFUN'")
@@ -113,7 +113,7 @@ def generate_grouped_chart(prompt):
     ax.set_ylabel("Average Score")
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=45, ha='right')
-    ax.set_title("GOTR Interactive Dashboard")
+    ax.set_title("Results")
     st.pyplot(fig)
 
 # Show chart on input
