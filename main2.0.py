@@ -113,7 +113,7 @@ def generate_grouped_chart(prompt):
     ax.set_ylabel("Average Score")
     ax.set_xticks(x)
     ax.set_xticklabels(labels, rotation=45, ha='right')
-    ax.set_title("GOTR AI Interactive Dashboard")
+    ax.set_title("GOTR Interactive Dashboard")
     st.pyplot(fig)
 
 # Show chart on input
