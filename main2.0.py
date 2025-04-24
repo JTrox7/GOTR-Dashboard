@@ -48,7 +48,7 @@ pre_post_pairs = {
 
 # Sidebar: list variable codes
 st.sidebar.title("📋 Survey Variables")
-st.sidebar.write("These are the available variable codes:")
+st.sidebar.write("These are the variable codes:")
 for var in pre_post_pairs:
     st.sidebar.markdown(f"- `{var}`")
 
