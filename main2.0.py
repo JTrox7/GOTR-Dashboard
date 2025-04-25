@@ -27,7 +27,7 @@ variable_descriptions = {
     'MISTAKE': 'I admit when I make a mistake',
     'LIKEPER': 'I like the kind of person I am',
     'PAYATT': 'I have classmates who pay attention to what I say',
-    'STANDUP': "I stand up for kids who are being picked on',
+    'STANDUP': 'I stand up for kids who are being picked on',
     'TIMECOMM': 'I spend time helping my community',
     'SAD': 'It makes me sad to see a girl who can’t find anyone to play with',
     'HELPCOMM': 'I help others in my community',
