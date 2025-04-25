@@ -163,7 +163,7 @@ def generate_grouped_chart(prompt):
 
         # NEW: Distribution bar chart for survey scores
         with st.container():
-            st.markdown(f"<h4 style='font-size:22px; color:#333;'>{var} — Distribution of Scores</h4>", unsafe_allow_html=True)
+            
             fig_dist, ax_dist = plt.subplots()
 
             bins = [1, 2, 3, 4, 5]
