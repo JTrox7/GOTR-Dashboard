@@ -173,7 +173,15 @@ def generate_grouped_chart(prompt):
             ax_dist.bar(bins, pre_counts, width=0.4, label=f"{var} Pre", color='lightgreen', alpha=0.8, align='center')
             ax_dist.bar([b + 0.4 for b in bins], post_counts, width=0.4, label=f"{post_var} Post", color='darkgreen', alpha=0.8, align='center')
 
+            # Add labels above bars
+            for i, count in enumerate(pre_counts):
+                ax_dist.text(bins[i], count + 0.5, str(count), ha='center', va='bottom', fontsize=8)
 
+            for i, count in enumerate(post_counts):
+                ax_dist.text(bins[i] + 0.4, count + 0.5, str(count), ha='center', va='bottom', fontsize=8)
+
+
+            
             ax_dist.set_xlabel("Survey Score (1–5)")
             ax_dist.set_ylabel("Number of Responses")
             ax_dist.set_xticks([b + 0.2 for b in bins])
