@@ -170,8 +170,9 @@ def generate_grouped_chart(prompt):
             pre_counts = df[var].value_counts().reindex(bins, fill_value=0)
             post_counts = df[post_var].value_counts().reindex(bins, fill_value=0)
 
-            ax_dist.bar(bins, pre_counts, width=0.4, label=f"{var} Pre", alpha=0.6, align='center')
-            ax_dist.bar([b + 0.4 for b in bins], post_counts, width=0.4, label=f"{post_var} Post", alpha=0.6, align='center')
+            ax_dist.bar(bins, pre_counts, width=0.4, label=f"{var} Pre", color='lightgreen', alpha=0.8, align='center')
+            ax_dist.bar([b + 0.4 for b in bins], post_counts, width=0.4, label=f"{post_var} Post", color='darkgreen', alpha=0.8, align='center')
+
 
             ax_dist.set_xlabel("Survey Score (1–5)")
             ax_dist.set_ylabel("Number of Responses")
