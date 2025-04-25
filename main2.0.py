@@ -158,7 +158,7 @@ def generate_grouped_chart(prompt):
         avg_pre = df[var].mean()
         avg_post = df[post_var].mean()
         difference = avg_post - avg_pre
-        percent_change = (avg_post / avg_pre) * -100 if avg_pre != 0 else 0
+        percent_change = ((avg_pre - avg_post) / avg_pre) * 100 if avg_pre != 0 else 0
 
         with st.container():
             st.subheader(f"Summary for {var}")
