@@ -161,13 +161,6 @@ def generate_grouped_chart(prompt):
         difference = avg_pre - avg_post
         percent_change = ((avg_post - avg_pre) / avg_pre) * 100 if avg_pre != 0 else 0
 
-        with st.container():
-            st.subheader(f"Summary for {var}")
-            st.write(f"**Pre Survey Mean ({var})**: {avg_pre:.2f}")
-            st.write(f"**Post Survey Mean ({post_var})**: {avg_post:.2f}")
-            st.write(f"**Difference (Pre - Post)**: {difference:.2f}")
-            st.write(f"**Percent Change**: {percent_change:.2f}%")
-
         # NEW: Distribution bar chart for survey scores
         with st.container():
             st.markdown(f"**Distribution of Scores for {var}**")
