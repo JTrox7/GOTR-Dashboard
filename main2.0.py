@@ -154,34 +154,42 @@ def generate_grouped_chart(prompt):
     ax.set_title("Results")
     st.pyplot(fig)
 
-    # Display the mean values and difference
-    for var in matched_metrics:
-        post_var = pre_post_pairs[var]
-        avg_pre = df[var].mean()
-        avg_post = df[post_var].mean()
-        difference = avg_post - avg_pre
-        percent_change = (difference / avg_pre) * 100 if avg_pre != 0 else 0
+ for var in matched_metrics:
+    post_var = pre_post_pairs[var]
+    avg_pre = df[var].mean()
+    avg_post = df[post_var].mean()
+    difference = avg_pre - avg_post
+    percent_change = ((avg_post - avg_pre) / avg_pre) * 100 if avg_pre != 0 else 0
 
-                # Bar chart for distribution of scores
-        with st.container():
-            st.markdown(f"**Distribution of Scores for {var}**")
-            fig_dist, ax_dist = plt.subplots()
+    # 🎯 Summary section
+    with st.container():
+        st.subheader(f"Summary for {var}")
+        st.write(f"**Pre Survey Mean ({var})**: {avg_pre:.2f}")
+        st.write(f"**Post Survey Mean ({post_var})**: {avg_post:.2f}")
+        st.write(f"**Difference (Pre - Post)**: {difference:.2f}")
+        st.write(f"**Percent Change**: {percent_change:.2f}%")
 
-            bins = [1, 2, 3, 4, 5]
-            pre_counts = df[var].value_counts().reindex(bins, fill_value=0)
-            post_counts = df[post_var].value_counts().reindex(bins, fill_value=0)
+    # 📊 Distribution chart section (immediately below)
+    with st.container():
+        st.markdown(f"**Distribution of Scores for {var}**")
+        fig_dist, ax_dist = plt.subplots()
 
-            ax_dist.bar(bins, pre_counts, width=0.4, label=f"{var} Pre", alpha=0.6, align='center')
-            ax_dist.bar([b + 0.4 for b in bins], post_counts, width=0.4, label=f"{post_var} Post", alpha=0.6, align='center')
+        bins = [1, 2, 3, 4, 5]
+        pre_counts = df[var].value_counts().reindex(bins, fill_value=0)
+        post_counts = df[post_var].value_counts().reindex(bins, fill_value=0)
 
-            ax_dist.set_xlabel("Survey Score (1–5)")
-            ax_dist.set_ylabel("Number of Responses")
-            ax_dist.set_xticks([b + 0.2 for b in bins])
-            ax_dist.set_xticklabels(bins)
-            ax_dist.legend()
-            ax_dist.set_title(f"{var} Score Distribution")
+        ax_dist.bar(bins, pre_counts, width=0.4, label=f"{var} Pre", alpha=0.6, align='center')
+        ax_dist.bar([b + 0.4 for b in bins], post_counts, width=0.4, label=f"{post_var} Post", alpha=0.6, align='center')
 
-            st.pyplot(fig_dist)
+        ax_dist.set_xlabel("Survey Score (1–5)")
+        ax_dist.set_ylabel("Number of Responses")
+        ax_dist.set_xticks([b + 0.2 for b in bins])
+        ax_dist.set_xticklabels(bins)
+        ax_dist.legend()
+        ax_dist.set_title(f"{var} Score Distribution")
+
+        st.pyplot(fig_dist)
+
 
 
         with st.container():
