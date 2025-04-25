@@ -15,6 +15,35 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+# Variable descriptions
+variable_descriptions = {
+    'PHYSACT': 'I am good at most physical activities',
+    'CLASS': 'I have classmates who like me the way I am',
+    'RESPECT': 'I show respect for others',
+    'FRIENDS': 'I have classmates I can become friends with',
+    'RESPACTS': 'I accept responsibility for my actions',
+    'HAPPYAM': 'I am happy the way I am',
+    'MAKEFUN': 'I have classmates who sometimes make fun of me',
+    'MISTAKE': 'I admit when I make a mistake',
+    'LIKEPER': 'I like the kind of person I am',
+    'PAYATT': 'I have classmates who pay attention to what I say',
+    'TIMECOMM': 'I spend time helping my community',
+    'SAD': 'It makes me sad to see a girl who can’t find anyone to play with',
+    'HELPCOMM': 'I help others in my community',
+    'UPSET': 'I feel upset when I see a girl getting her feelings hurt',
+    'BADLY': 'I feel badly for other girls who are sad',
+    'PICKED': 'I feel badly when I see a girl getting picked on',
+    'ELEC': 'On a school day, hours spent on electronics',
+    'AGE': 'Participant age',
+    'GRADE': 'Participant grade',
+    'BLACK': 'Identifies as Black',
+    'ASIAN': 'Identifies as Asian',
+    'WHITE': 'Identifies as White',
+    'OTHER': 'Identifies as Other race/ethnicity',
+    'PARTSEAS': 'Participates in a seasonal sport'
+}
+
+
 # Load your CSV data
 df = pd.read_csv("data.csv")
 
@@ -95,6 +124,12 @@ def generate_grouped_chart(prompt):
         st.info("Please include at least one known category like RESPECT, PHYSACT, or MAKEFUN.")
         return
 
+    # Show the variable description
+    for var in matched_metrics:
+        description = variable_descriptions.get(var, "No description available.")
+        st.markdown(f"### {var}: {description}")
+
+    
     labels = []
     values = []
     colors = []
