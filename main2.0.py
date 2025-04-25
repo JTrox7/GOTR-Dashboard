@@ -127,7 +127,8 @@ def generate_grouped_chart(prompt):
     # Show the variable description
     for var in matched_metrics:
         description = variable_descriptions.get(var, "No description available.")
-        st.markdown(f"### {var}: {description}")
+        st.markdown(f"<div style='font-size:18px; font-weight:bold;'>{var}: {description}</div>", unsafe_allow_html=True)
+
 
     
     labels = []
