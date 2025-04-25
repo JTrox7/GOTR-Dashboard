@@ -184,7 +184,7 @@ def generate_grouped_chart(prompt):
             st.pyplot(fig_dist)
 
 
-            st.markdown("<hr style='border: 1px solid purple;'>", unsafe_allow_html=True)
+            
 
 
         with st.container():
@@ -193,7 +193,8 @@ def generate_grouped_chart(prompt):
             st.write(f"**Post Survey Mean ({post_var})**: {avg_post:.2f}")
             st.write(f"**Difference (Pre - Post)**: {difference:.2f}")
             st.write(f"**Percent Change**: {percent_change:.2f}%")
-
+            
+        st.markdown("<hr style='border: 1px solid purple;'>", unsafe_allow_html=True)
 
 # Show chart on input
 if user_input:
