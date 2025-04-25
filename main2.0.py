@@ -116,6 +116,20 @@ def generate_grouped_chart(prompt):
     ax.set_title("Results")
     st.pyplot(fig)
 
+    # Display the mean values and difference
+    for var in matched_metrics:
+        post_var = pre_post_pairs[var]
+        avg_pre = df[var].mean()
+        avg_post = df[post_var].mean()
+        difference = avg_pre - avg_post
+
+        with st.container():
+            st.subheader(f"Summary for {var}")
+            st.write(f"**Pre Survey Mean ({var})**: {avg_pre:.2f}")
+            st.write(f"**Post Survey Mean ({post_var})**: {avg_post:.2f}")
+            st.write(f"**Difference (Pre - Post)**: {difference:.2f}")
+
+
 # Show chart on input
 if user_input:
     generate_grouped_chart(user_input)
