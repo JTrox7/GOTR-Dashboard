@@ -61,7 +61,7 @@ pre_post_pairs = {
     'LIKEPER': 'LIKEPERP',
     'PAYATT': 'PAYATTP',
     'TIMECOMM': 'TIMECOMMP',
-    'STANDUP': 'STANDUP',
+    'STANDUP': 'STANDUPP',
     'SAD': 'SADP',
     'HELPCOMM': 'HELPCOMMP',
     'UPSET': 'UPSETP',
