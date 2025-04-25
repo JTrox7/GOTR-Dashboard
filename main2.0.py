@@ -105,7 +105,7 @@ def generate_grouped_chart(prompt):
         avg_post = df[post_var].mean()
         labels.extend([f"{var} Pre", f"{var} Post"])
         values.extend([avg_pre, avg_post])
-        colors.extend(["lightgreen", "pink"])
+        colors.extend(["pink", "purple"])
 
     fig, ax = plt.subplots()
     x = np.arange(len(labels))
