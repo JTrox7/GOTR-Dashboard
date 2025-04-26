@@ -158,7 +158,7 @@ def generate_grouped_chart(prompt):
         post_var = pre_post_pairs[var]
         avg_pre = df[var].mean()
         avg_post = df[post_var].mean()
-        difference = avg_pre - avg_post
+        difference = avg_post - avg_pre
         percent_change = ((avg_post - avg_pre) / avg_pre) * 100 if avg_pre != 0 else 0
 
         # NEW: Distribution bar chart for survey scores
