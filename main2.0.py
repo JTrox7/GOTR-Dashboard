@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# ✅ Page config must be the first Streamlit command!
+# Page config must be the first Streamlit command!
 st.set_page_config(page_title="GOTR Dashboard", layout="centered")
 
 # Custom background color with HTML
@@ -86,10 +86,10 @@ for var in pre_post_pairs:
 # App title
 st.title("GOTR Interactive Dashboard")
 
-# ✅ Input prompt FIRST
+# Input prompt FIRST
 user_input = st.text_input("Ask something like: 'Compare RESPECT and PHYSACT' or 'Show the change in MAKEFUN'")
 
-# 👇 Then the variable definitions
+# Then the variable definitions
 with st.expander("🧠 What do the variable names mean?"):
     st.markdown("""
     - **PHYSACT** — I am good at most physical activities  
