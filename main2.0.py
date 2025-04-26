@@ -199,7 +199,7 @@ def generate_grouped_chart(prompt):
             st.subheader(f"Summary for {var}")
             st.write(f"**Pre Survey Mean ({var})**: {avg_pre:.2f}")
             st.write(f"**Post Survey Mean ({post_var})**: {avg_post:.2f}")
-            st.write(f"**Difference (Pre - Post)**: {difference:.2f}")
+            st.write(f"**Difference (Post - Pre)**: {difference:.2f}")
             st.write(f"**Percent Change**: {percent_change:.2f}%")
             
         st.markdown("<hr style='border: 1px solid purple;'>", unsafe_allow_html=True)
