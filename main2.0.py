@@ -17,7 +17,7 @@ st.markdown("""
 
 # Variable descriptions
 variable_descriptions = {
-    'PHYSACT': 'I am good at most physical activities',
+    'PHYSACT': 'TEST',
     'CLASS': 'I have classmates who like me the way I am',
     'RESPECT': 'I show respect for others',
     'FRIENDS': 'I have classmates I can become friends with',
