@@ -78,7 +78,7 @@ pre_post_pairs = {
 }
 
 # Sidebar: list variable codes
-st.sidebar.title("📋 Survey Variables")
+st.sidebar.title("Survey Variables")
 st.sidebar.write("Below are the variable codes used in the Girls on the Run survey:")
 for var in pre_post_pairs:
     st.sidebar.markdown(f"- `{var}`")
@@ -90,7 +90,7 @@ st.title("GOTR Interactive Dashboard")
 user_input = st.text_input("Ask something like: 'Compare RESPECT and PHYSACT' or 'Show the change in MAKEFUN'")
 
 # Then the variable definitions
-with st.expander("🧠 What do the variable names mean?"):
+with st.expander("What do the variable names mean?"):
     st.markdown("""
     - **PHYSACT** — I am good at most physical activities  
     - **CLASS** — I have classmates who like me the way I am  
