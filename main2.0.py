@@ -45,7 +45,7 @@ variable_descriptions = {
 }
 
 
-# Load your CSV data
+# Load data
 df = pd.read_csv("data.csv")
 
 # Pre/post variable mappings
@@ -84,7 +84,7 @@ for var in pre_post_pairs:
     st.sidebar.markdown(f"- `{var}`")
 
 # App title
-st.title("GOTR Interactive Dashboard")
+st.title("Girls on the Run Interactive Dashboard")
 
 # Input prompt FIRST
 user_input = st.text_input("Ask something like: 'Compare RESPECT and PHYSACT' or 'Show the change in MAKEFUN'")
